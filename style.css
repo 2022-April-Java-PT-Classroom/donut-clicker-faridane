@@ -1,0 +1,153 @@
+#board{
+    width: 450px;
+    height: 370px;
+    background-color: rgb(155, 93, 13);
+    border: 5px solid rgb(87, 53, 9);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    
+    
+    position: static;
+}
+#board img{
+    width: 450px;
+    height: 370px;
+}
+
+#makeDonut img{
+    width: 30px;
+    height: 20px;
+}
+
+body{
+    background: url("images/bgdonut.jpg") no-repeat center center;
+    background-size: cover;
+    margin: 0;
+    text-align: center;
+    font-family: cursive;
+   color: rgb(35, 1, 1);
+   font-size: large;
+   font-weight: bold;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 50px 1fr 1fr 100px;
+
+    gap: 5px;
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+#container div{
+    padding: 2px;
+    border: 1px solid black;
+}
+   
+.header{
+    grid-column-start: 1;
+    grid-column-end: 6;
+   grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+
+.navbar{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+.navbar2{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 7;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+
+.main{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 7;
+    border-radius: 10px;
+    background-color: rgb(155, 93, 13);
+}
+
+.pdonutmulti, #autoClicker, #buyautoclick, #multiple, .navbar3{
+    border-radius: 10px;
+}
+
+.section1{
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+
+.section2{
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+.footer2{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+.footer1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+.footer3{
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    background-color: rgb(155, 93, 13);
+    border-radius: 10px;
+}
+
+
+#title{
+    margin-top: 0;
+    padding-top: 0;
+    
+}
+
+button{
+    background-color: rgb(185, 108, 9);
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+   color: rgb(35, 1, 1);
+   border-radius: 10px;
+}
+
+span{
+    background-color: rgb(185, 108, 9);
+}
+
+
