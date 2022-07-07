@@ -18,19 +18,23 @@ function addDonut() {
     donutCount++;
     document.querySelector('#donut_count').innerHTML = (donutCount);
 
-    if (donutCount < 8) {
+    if (donutCount < 10) {
         document.getElementById('multiply').disabled = true;
+        document.getElementById('autoclick').disabled = true;
         
 
-    } else if (donutCount > 8 && donutCount < 10) {
+    } else if (donutCount >= 10 && donutCount <100) {
         document.getElementById('multiply').disabled = false;
+        document.getElementById('autoclick').disabled = true;
     } 
     
-        if (donutCount < 15) {
+        if (donutCount < 100) {
             document.getElementById('autoclick').disabled = true;
+            document.getElementById('multiply').disabled = false;
         
-        } else if (donutCount > 15 && donutCount < 20) {
+        } else if (donutCount >= 100) {
             document.getElementById('autoclick').disabled = false;
+            document.getElementById('multiply').disabled = false;
     } 
     
     
@@ -58,14 +62,12 @@ function menu() {
 }
 
 function instruction() {
-    document.querySelector('.navbar2').innerHTML = "Follow these steps:<br><br>1. Click on 'Create Donut'to start the game<br><br> 2. Keep clicking to reach the count of 100 Donuts minimum<br><br> 3. Purchase 'auto clickers' or 'donut multipliers' to make more donut fast!<br><button onclick='moreDisplay()'>More</button><br><br> ";
-    
+    document.querySelector('.navbar2').innerHTML = "Follow these steps:<br><br>1. Click on 'Create Donut'to start the game<br><br> 2. Keep clicking to reach the count of 100 Donuts minimum<br><br> 3. Purchase 'auto clickers' or 'donut multipliers' to make more donut fast!<br><button onclick='moreDisplay()'>More</button><br><br> "; 
     
 }
 
 function moreDisplay() {
-    // document.getElementById('more').innerHTML; 
-    alert(" Collect at least 10 donuts and start buying donuts multipliers ");
+    alert(" Collect at least 10 donuts and start buying donuts multipliers. For each Donut Multiplier purchased, the cost of the next Donut Multiplier increases by 10%. Donut Multipliers increase the value of both manual and Auto Clicks by 20% for each Donut Multiplier purchased.");
 }
 
 
@@ -80,28 +82,44 @@ const timerText = document.getElementById("donut_count");
 const btnStart = document.getElementById("autoclick");
 const btnStop = document.getElementById("resetBtn");
 
-let count=0;
+// let count = 0;
+let donutCount2 = 0;
 let intervalID;
-
 
 
 btnStart.addEventListener("click", function () {
     intervalID = setInterval(function () {       
-        count += 5;   
-        timerText.textContent = count;
+        //count += 5;  
+        donutCount2 += 5;
+        // timerText.textContent = count;
+        timerText.textContent = donutCount2;
 
-        if (count < 10) {
+    //     if (count < 10) {
+    //     document.getElementById('multiply').disabled = true;
+    //     document.getElementById('autoclick').disabled = true;
+    // }
+    // if (count >= 10 && count <15) {
+    //     document.getElementById('multiply').disabled = false;
+    //     document.getElementById('autoclick').disabled = true;
+    // } 
+    // if (count >= 15) {
+    //     document.getElementById('multiply').disabled = false;
+    //     document.getElementById('autoclick').disabled = false;
+    // }
+    
+    if (donutCount2 < 10) {
         document.getElementById('multiply').disabled = true;
         document.getElementById('autoclick').disabled = true;
     }
-    if (count >= 10 && count <15) {
+    if (donutCount2 >= 10 && donutCount2 <100) {
         document.getElementById('multiply').disabled = false;
         document.getElementById('autoclick').disabled = true;
     } 
-    if (count >= 15) {
+    if (donutCount2 >= 100) {
         document.getElementById('multiply').disabled = false;
         document.getElementById('autoclick').disabled = false;
     }
+    
     }, 1000);
     
 });
@@ -117,31 +135,32 @@ btnStop.addEventListener("click", function () {
 function autoClicker() {
     document.querySelector('#autoclick').innerHTML = "Buy 1 Auto Clicker";
     
+    
 }  
 
 function autoClickerEnableDisable() {
     let element2 = document.querySelector('#donut_count');
     let donutCount2 = element2.innerHTML;
-    donutCount2 -= 15;
+    donutCount2 -= 100;
     document.querySelector('#donut_count').innerHTML = (donutCount2);
 
     if (donutCount2 < 10) {
         document.getElementById('multiply').disabled = true;
         document.getElementById('autoclick').disabled = true;
     }
-    if (donutCount2 >= 10 && donutCount2 <15) {
+    if (donutCount2 >= 10 && donutCount2 <100) {
         document.getElementById('multiply').disabled = false;
         document.getElementById('autoclick').disabled = true;
     } 
-    if (donutCount2 >= 15) {
+    if (donutCount2 >= 100) {
         document.getElementById('multiply').disabled = false;
         document.getElementById('autoclick').disabled = false;
     }
     btnStop.addEventListener("click", function () {
     clearInterval(intervalID);
-});
-}
+    });   
 
+}
 
 
 function purchaseAutoClicker() { 
@@ -164,12 +183,12 @@ function purchaseAutoClicker2() {
         document.getElementById('multiply').disabled = true;
         document.getElementById('autoclick').disabled = true;
     }
-    if (donutCount2 >= 10 && donutCount2 <15) {
+    if (donutCount2 >= 10 && donutCount2 <100) {
         document.getElementById('multiply').disabled = false;
 
         document.getElementById('autoclick').disabled = true;
     } 
-    if (donutCount2 >= 15) {
+    if (donutCount2 >= 100) {
         document.getElementById('multiply').disabled = false;
         document.getElementById('autoclick').disabled = false;
     }
@@ -196,12 +215,12 @@ function multiplierEnableDisable() {
         document.getElementById('multiply').disabled = true;
         document.getElementById('autoclick').disabled = true;
     }
-    if (donutCount >= 10 && donutCount <15) {
+    if (donutCount >= 10 && donutCount <100) {
         document.getElementById('multiply').disabled = false;
         document.getElementById('autoclick').disabled = true;
         
     } 
-    if (donutCount >= 15) {
+    if (donutCount >= 100) {
         document.getElementById('multiply').disabled = false;
         document.getElementById('autoclick').disabled = false;
     }
@@ -255,7 +274,25 @@ function resetGame() {
     alert("You've clicked on RESET !");
     document.getElementById("total_auto_clicker").innerHTML = '00';
     document.getElementById("total_donut_multiplier").innerHTML = '00';
-    document.getElementById("donut_count").innerHTML = '00';  
+    document.getElementById("donut_count").innerHTML = '00'; 
+
+    let element = document.querySelector('#donut_count');
+    let donutCount2 = element.innerHTML;
+    donutCount2;
+    document.querySelector('#donut_count').innerHTML = (donutCount2);
+    
+    if (donutCount2 < 10) {
+        document.getElementById('multiply').disabled = true;
+        document.getElementById('autoclick').disabled = true;
+    }
+    if (donutCount2 >= 10 && donutCount2 <100) {
+        document.getElementById('multiply').disabled = false;
+        document.getElementById('autoclick').disabled = true;
+    } 
+    if (donutCount2 >= 100) {
+        document.getElementById('multiply').disabled = false;
+        document.getElementById('autoclick').disabled = false;
+    }
     
     btnStart1.addEventListener("click", function () {
         count1 = 0;           
