@@ -5,9 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donut Clicker</title>
-  </head>
-  <body>
-    <div class="container"></div>
-    <script src="./index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+
+<body onload="greeting()">
+  
+  <div id="container">
+
+    <div class="header">
+      <header>
+        <h2 id="title">Welcome to Fred the Baker Baking Company!</h2>
+      </header>
+    </div>
+   
+    <div class="navbar">
+      <button onclick="menu()" class="menu">Menu</button>
+      <div class="navbar3">
+        <button onclick="company()" class="about"></button>
+        <button onclick="fred()" class="fred"></button>
+        <button onclick="contact()" class="contact"></button>
+      </div>
+      
+      
+      </div>
+      <div class="navbar2">
+        <button onclick="instruction()"><h3>INSTRUCTIONS</h3></button>
+        
+      </div>
+      
+
+      
+      <div class="main">    
+        <main>
+          GAME BOARD
+          <div id="board"></div>
+        </main>
+      </div>
+      
+      <div class="section1">
+        <section>
+          Auto Clickers
+        </section>
+        <div id="autoClicker">
+          <section>
+            <button id="pautoclick" onclick="autoClicker()">Purchase Auto Clickers</button>           
+          </section>
+        </div>
+        <div id="buyautoclick">
+          <button disabled onclick="purchaseAutoClicker()" id="autoclick"></button>
+        </div>
+        <p>Total Auto Clickers: <span id="total_auto_clicker">00</span></p>
+      </div>
+
+      <div class="section2">
+        <section>
+          Donut Multiplier
+        </section>
+        <div class="pdonutmulti">
+        <section>
+          <button id="pdm" onclick="donutMultiplier()">Purchase Donut Multiplier</button>
+        </section>
+        </div>
+        <div id="multiple">
+          <button disabled onclick="purchaseDonutMultiplier()" id="multiply"></button>
+        </div>
+        <p>Total Donut Multiplier: <span id="total_donut_multiplier">00</span></p>
+      </div>
+
+      <div class="footer2">
+        <footer id="footer">
+        Amount of Donut: <span id="donut_count">00</span>
+        </footer>
+      </div>
+      <div class="footer1">
+        <footer>
+        <button id="makeDonut" onclick="addDonut()" ><img src="images/donut4.jpg"/> CREATE DONUTS</button>
+      </footer>
+      </div>
+      <div class="footer3">
+        <footer>
+          <button id="resetBtn" onclick="resetGame()">RESET</button>
+        </footer>
+      </div>
+    
+    </div>
+
+    <script src="/donut.js"></script>
+    
   </body>
-</html>
+</html> 
